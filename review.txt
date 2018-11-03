@@ -1,19 +1,40 @@
-Python is a completely object oriented program. 
+Basic Python Language Syntax
+Comments 
+	comments are marked by an "#"
+		ex: # This line is a comment
+	python does not have any multi line comment like in c or c++
+Statements 
+	end of line typically ends a statement 
+	semicolons can be used to have more than one statement on one line
 
-In many programming languages, variables are best thought of as containers or buckets into which you put data. You are essentially defining a "memory bucket" 
-named x, and putting the value 4 into it. In Python, by contrast, variables are best thought of not as containers but as pointers. Because Python variables 
-just point to various objects, there is no need to "declare" the variable, or even require the variable to always point to information of the same type! 
-This is the sense in which people say Python is dynamically-typed: variable names can point to objects of any type. 
+	if you need to continue to the next line, use "\" to indicate it OR you can enclose the entire thing in parenthesis 
+		ex: 	x = 1 + 2 + 3 + 4 +\
+    			    5 + 6 + 7 + 8
+			--------------------
+	       		x = (1 + 2 + 3 + 4 +
+     			     5 + 6 + 7 + 8)
+Whitespace
+	Blocks
+		in languages like C blocks are denoted by using curly braces but in python, indentation is used to denote blocks
+		indented blocks in python wil always be denoted by the use of a colon, ":"
+			recommended indentation is four spaces
+	in statement
+		whitespace within lines does not matter
+			ex: 	x=1+2
+				x = 1 + 2
+				x             =        1    +                2
+			are the same
+Parenthesis 
+	parenthesis are used for either grouping or for calling
+		ex: grouping
+			2 * (3 + 4)
+		ex: calling
+			L = [4,2,3,1]
+			L.sort()
+			print(L)
+			------------
+			[1, 2, 3, 4]
+			The "()" after sort indicates that the function should be executed, and is required even if no arguments are necessary.
 
-Python is not a type-free language. Python has types; however, the types are linked not to the variable names but to the objects themselves.
-
-Creating Variables
-	-Unlike other programming languages, Python has no command for declaring a variable. A variable is created the moment you first assign a value to it.
-	-Variables do not need to be declared with any particular type and can even change type after they have been set.
-	-A variable can have a short name (like x and y) or a more descriptive name (age, carname, total_volume). 
-	-Rules for Python variables:
-		-A variable name must start with a letter or the underscore character
-		-A variable name cannot start with a number
-		-A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
-		-Variable names are case-sensitive (age, Age and AGE are three different variables)
-		-Variables are case-sensitive
+	
+		

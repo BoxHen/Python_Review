@@ -1,0 +1,19 @@
+Python is a completely object oriented program. 
+
+In many programming languages, variables are best thought of as containers or buckets into which you put data. You are essentially defining a "memory bucket" 
+named x, and putting the value 4 into it. In Python, by contrast, variables are best thought of not as containers but as pointers. Because Python variables 
+just point to various objects, there is no need to "declare" the variable, or even require the variable to always point to information of the same type! 
+This is the sense in which people say Python is dynamically-typed: variable names can point to objects of any type. 
+
+Python is not a type-free language. Python has types; however, the types are linked not to the variable names but to the objects themselves.
+
+Creating Variables
+	-Unlike other programming languages, Python has no command for declaring a variable. A variable is created the moment you first assign a value to it.
+	-Variables do not need to be declared with any particular type and can even change type after they have been set.
+	-A variable can have a short name (like x and y) or a more descriptive name (age, carname, total_volume). 
+	-Rules for Python variables:
+		-A variable name must start with a letter or the underscore character
+		-A variable name cannot start with a number
+		-A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
+		-Variable names are case-sensitive (age, Age and AGE are three different variables)
+		-Variables are case-sensitive
