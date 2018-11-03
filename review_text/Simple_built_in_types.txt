@@ -1,0 +1,76 @@
+Simple built in types
+
+	int		| x = 1		| integers (i.e., whole numbers)
+	float		| x = 1.0	| floating-point numbers (i.e., real numbers)
+	complex		| x = 1 + 2j	| Complex numbers (i.e., numbers with real and imaginary part)
+	bool		| x = True	| Boolean: True/False values
+	str		| x = 'abc'	| String: characters or text
+	NoneType	| x = None	| Special object indicating nulls
+integers
+	in python 3, values can be upcasted. this means that things like this can happen:
+		ex:
+			2 ** 200 = 1606938044258990275541962092341162602522202993782792835301376
+			5 / 2 = 2.5 without upcast, this would equal to 2 (this is the case in python 2)
+
+floating point 
+	They can be defined either in standard decimal notation, or in exponential notation
+		ex:
+			x = 0.000005
+			y = 5e-6
+			print(x == y) # true
+	Note: with floating point arithmetic, precision is limited. So equality tests can be unstable. 
+		ex:
+			0.1 + 0.2 == 0.3 #False
+			
+			print("0.1 = {0:.17f}".format(0.1))
+			print("0.2 = {0:.17f}".format(0.2))
+			print("0.3 = {0:.17f}".format(0.3))
+				0.1 = 0.10000000000000001
+				0.2 = 0.20000000000000001
+				0.3 = 0.29999999999999999
+	The reasoning behind this is the same as the reason why we need and infinte number of places to represent 1/3 in base 10
+	The same applies to base 2 for number such as 1/10 (need infinite number of places)
+	Python internally truncates these representations at 52 bits beyond the first nonzero bit usually.
+
+	This rounding error for floating-point values is a necessary evil of working with floating-point numbers. 
+	The best way to deal with it is to always keep in mind that floating-point arithmetic is approximate, 
+	and never rely on exact equality tests with floating-point values.
+
+Complex Numbers
+	Complex numbers are numbers with real and imaginary (floating-point) parts. 
+		ex: c = 3 + 4j
+			c.real  	# real part = 3.0
+			c.imag  	# imaginary part = 4.0
+			c.conjugate()   # complex conjugate = (3-4j)
+			abs(c)  	# magnitude, i.e. sqrt(c.real ** 2 + c.imag ** 2) = 5.0
+
+String Type
+	Strings in Python are created with single or double quotes:
+		ex:
+			message1 = "How was your day?"
+			message2 = 'Good, and you?'
+Nonetype
+	Python includes a special type, the NoneType, which has only a single possible value: None.
+
+	most commonly used place is default return value of  a function. For example, the print() function in Python 3 does not return anything, but we can still catch its value.
+
+	Likewise, any function in Python with no return value is, in reality, returning None.
+
+Boolean
+	Two possible values, True or False
+	Boolean values are case-sensitive so, True and False must be capitalized.
+	Booleans can be made using the bool() object constructor. Values of other types can be converted to Boolean. For example, any numeric type is False if equal to zero, and True otherwise.
+	Bool of none is false
+	for strings, bool is false for empty strings and true otherwise
+	For sequences, the bool is False for empty sequences and True for any other sequences
+	
+
+
+
+
+
+
+
+
+
+
