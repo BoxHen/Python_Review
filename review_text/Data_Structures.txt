@@ -1,0 +1,133 @@
+Built in data structures
+
+list	[1, 2, 3]	Ordered collection
+tuple	(1, 2, 3)	Immutable ordered collection
+dict	{'a':1, 'b':2, 'c':3}	Unordered (key,value) mapping
+set	{1, 2, 3}	Unordered collection of unique values
+
+Lists
+	lists are mutable data collection type. They are defined with comma separated values between square brackets.
+
+	It does take an extra step to use arrays because they have to be declared while lists don't because they are 
+	part of Python's syntax, so lists are generally used more often between the two, which works fine most of the 
+	time. However, if you're going to perform arithmetic functions to your lists, you should really be using arrays 
+	instead. Additionally, arrays will store your data more compactly and efficiently, so if you're storing a large 
+	amount of data, you may consider using arrays as well.	
+
+	Basically, Python lists are very flexible and can hold completely heterogeneous, arbitrary data, and they can 
+	be appended to very efficiently, in amortized constant time. If you need to shrink and grow your array 
+	time-efficiently and without hassle, they are the way to go. But they use a lot more space than C arrays.
+
+		ex: L = [2, 3, 5, 7]
+			Lists have a number of useful properties and methods available to them. 
+			# Length of a list
+			len(L) #4
+
+			# Append a value to the end
+			L.append(11) #L is [2, 3, 5, 7, 11]
+
+			# Addition concatenates lists
+			L + [13, 17, 19] #[2, 3, 5, 7, 11, 13, 17, 19]
+
+			# sort() method sorts in-place
+			L = [2, 5, 1, 6, 3, 4]
+			L.sort() #L is [1, 2, 3, 4, 5, 6]
+
+	one of the powerful features of Python's compound objects is that they can contain objects of any type, or even a mix of types.
+		ex: 
+			L = [1, 'two', 3.14, [0, 3, 5]]
+Lists indexing and slicing
+	Python allows access to elements in compound types through indexing for single elements, and slicing for multiple elements.
+	L = [2, 3, 5, 7, 11]
+	Python uses zero-based indexing, so we can access the first and second element with index of 0 and 1
+		ex:
+			L[0] #2
+			L[1] #3
+	Elements at the end of the list can be accessed with negative numbers, starting from -1:
+		ex:
+			L[-1] #11
+			L[-2] #7
+
+	While indexing allows access to a single element, slicing allows you access to multiple elements (a range). You have a start point(inclusive) and a end point(non-inclusive)
+		ex:
+			L = [2, 3, 5, 7, 11]
+			L[0:3] #[2, 3, 5]
+	If we leave out the first index, 0 is assumed and if we leave out the last index, the length of the list is assumed. 
+	It is possible to specify a third integer that represents the step size; for example, to select every second element of the list, we can write
+		ex:
+			L[::2]  # equivalent to L[0:len(L):2]
+				# [2, 5, 11]
+	WE can specify a negative step, which will reverse the array:	
+		ex:
+			L[::-1] #[11, 7, 5, 3, 2]
+
+Tuples
+	Tuples are very similar to lists but are defined with parenthesis rather than brackets
+		ex:	
+			t = (1, 2, 3)
+			They can also be defined without any brackets at all:
+			t = 1, 2, 3
+			print(t) #(1, 2, 3)
+	tuples have a length, and individual elements can be extracted using square-bracket indexing
+		ex:
+			len(t) #3
+			t[0]   #1
+	HOWEVER!, the difference is that tuples are immutable. This means that once they are defined, their size and contents can not be changed
+		ex: if we tried to do something like this:
+			t[1] = 10   #we wil get something like TypeError: 'tuple' object does not support item assignment
+
+			t.append(4) #AttributeError: 'tuple' object has no attribute 'append'
+
+Dictionaries (like hashing in java)
+	Dictionaries are flexible mappings of keys to values. They can 	be created via a comma-separated list of key:value pairs within curly braces:
+		ex:
+			numbers = {'one':1, 'two':2, 'three':3}
+
+			Items are accessed and set via the indexing syntax used for lists and tuples, except here the index is not a zero-based 
+			order but valid key in the dictionary
+		
+			# Access a value via the key
+			numbers['two']  # gives 2
+
+			New items can be added to the dictionary using indexing as well:
+			# Set a new key:value pair
+			numbers['ninety'] = 90
+			print(numbers)  #{'three': 3, 'ninety': 90, 'two': 2, 'one': 1}
+
+	Dictionaries do not maintain any sense of order for the input parameters. This lack of ordering allows dictionaries to be implemented very 
+	efficiently, so that random element access is very fast, regardless of the size of the dictionary.
+
+Sets
+	contains unordered collections of unique items. They are defined much like lists and tuples, except they use the curly brackets of dictionaries
+
+	primes = {2, 3, 5, 7}
+	odds = {1, 3, 5, 7, 9}
+	Python's sets have union, intersection, difference, symmetric difference, and other operations built-in, via methods or operators. 
+		ex:
+			# union: items appearing in either
+			primes | odds      # with an operator
+			primes.union(odds) # equivalently with a method 
+				#{1, 2, 3, 5, 7, 9}
+
+			# intersection: items appearing in both
+			primes & odds             # with an operator
+			primes.intersection(odds) # equivalently with a method 
+				#{3, 5, 7}
+	
+			# difference: items in primes but not in odds
+			primes - odds           # with an operator
+			primes.difference(odds) # equivalently with a method 
+				#{2}
+	
+			# symmetric difference: items appearing in only one set
+			primes ^ odds                     # with an operator
+			primes.symmetric_difference(odds) # equivalently with a method 
+				#{1, 2, 9}
+
+More data structures
+	refer to documentation
+		ex:
+			collections.namedtuple : Like a tuple, but each value has a name
+			collections.defaultdict: Like a dictionary, but unspecified keys have a user-specified default value
+			collections.OrderedDict: Like a dictionary, but the order of keys is maintained
+

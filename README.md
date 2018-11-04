@@ -2,4 +2,4 @@
     
     HelloWorld contains forst test code in python
     app folder will contain various files for learning python
-    review will hold notes
+    review_text will hold notes
