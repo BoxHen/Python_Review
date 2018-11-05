@@ -1,0 +1,81 @@
+Control Flow
+
+Conditional Statements
+	these include if, elif, and else. If statements bascially allow users to code based off boolean conditions
+	here, elif is used as a shortcut for elseif as opposed to other languages
+		ex:
+			x = -15
+
+			if x == 0:
+			    print(x, "is zero")
+			elif x > 0:
+			    print(x, "is positive")
+			elif x < 0:
+			    print(x, "is negative")
+			else:
+			    print(x, "is unlike anything I've ever seen...")
+			#-15 is negative is the answer
+
+for loops
+	To use for loops, we declar a variable to use, a sequence to loop over. The "in" operator is used to link them. 
+		ex:
+			for N in [1, 2, 3, 10]:
+ 			print(N, end=' ') # print all on same line
+			# 1 2 3 10 
+	the object to the right of the "in" can be any iterator(generalized sequence)
+		ex:
+			for i in range(5):
+ 			print(i, end=' ')
+			# 0 1 2 3 4 
+	It is important to see that the range by default starts at zero. Also, the top value of the range (in this case, 5) is not included
+		ex:
+			# range from 15 to 20
+			list(range(5, 10))
+				# [15, 16, 17 ,18, 19]
+
+			# range from 10 to 20 by 2
+			list(range(10, 20, 2))
+				# [10, 12, 14, 16, 18]
+while loops
+	while loops keeps looping until some condition is met
+		ex:
+			i = 0
+			while i < 5:
+  				print(i, end=' ')
+				i += 1
+			# 0 1 2 3 4 
+break and continue 
+	Break:    breaks out of the loop
+	continue: continues to the next iteration and skips remainder of the current loop
+	these can be used in conjunction with loops to achieve desired effects
+		Using a break we can have a while loop with a condition set to true. The loop will break if the break is read.
+loop-else
+	This is like a nobreak statement. The else block is executed only if the loop ends naturally. In other words, no break statement is encountered.
+		ex:
+			L = []
+			nmax = 30
+
+			for n in range(2, nmax):
+ 			   for factor in L:
+  			      if n % factor == 0:
+			            break
+		    	   else: # no break
+ 			      L.append(n)
+			print(L)
+		The else statement only executes if none of the factors divide the given number. 
+		The else statement works similarly with the while loop.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
